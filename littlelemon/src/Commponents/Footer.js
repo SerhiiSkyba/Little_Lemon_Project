@@ -1,4 +1,4 @@
-export default Footer = () =>{
+export default function Footer(){
     return(
         <footer>
             <img></img>
@@ -27,5 +27,5 @@ export default Footer = () =>{
                 </ul>
             </nav>
         </footer>
-    )
+    );
 }

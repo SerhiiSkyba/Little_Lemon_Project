@@ -1,7 +1,5 @@
-import ReactDOM from "react-dom"
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Logo from "../Resources/Logo.png"
-export default Header = () =>{
+export default function Header(){
     return (
         <header>
             <img src={Logo}></img>
