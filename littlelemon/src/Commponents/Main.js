@@ -1,7 +1,7 @@
-import First from "./Sections/First.js";
-import About from "./Sections/About.js";
-import Testimonials from "./Sections/Testimonials.js";
-import ThisWeekSpecial from "./Sections/ThisWeekSpecial.js";
+import First from "./First.js";
+import About from "./About.js";
+import Testimonials from "./Testimonials.js";
+import ThisWeekSpecial from "./ThisWeekSpecial.js";
 
 export default function Main(){
     return (

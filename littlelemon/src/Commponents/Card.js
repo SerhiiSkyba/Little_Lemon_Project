@@ -1,15 +1,18 @@
+import Icon from "../Resources/Bike.png"
+
 export default function Card(prop){
     return(
-        <card>
-            <img></img>
-            <article>
-                <div>
-                    <h3>{prop.title}</h3>
-                    <h4>{prop.price}</h4>
+        <div className="column card">
+            <img className="cardImage" src={prop.image} />
+            <article className="cardInfo column pad24 gap32">
+                <div className="row cardTitleAndPrice">
+                    <div className="invisible"><h4>{prop.title}</h4></div>
+                    <div className="invisible"/>
+                    <div className="invisible"><h5>{prop.price}</h5></div>
                 </div>
-                <p>{prop.text}</p>
-                <a>Order a delivery <img /></a>
+                <p className="cardDesc">{prop.text}</p>
+                <button className="OrderDeliveryButton">Order a delivery <img src={Icon} /></button>
             </article>
-        </card>
+        </div>
     )
 }
