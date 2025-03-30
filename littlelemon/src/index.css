@@ -149,6 +149,25 @@ h5{
   gap: auto;
   width: auto;
 }
-.cardInfo{
+.cardInfo, .testimonialInfo{ 
   background-color: #EDEFEE;
+}
+.testimonialInfo {
+  padding: 32px;
+  justify-content: start;
+  gap: 24px;
+}
+.testimonialText {
+  height: 132px;
+  color: #495E57;
+}
+.testimaonialName {
+  color: #495E57;
+}
+.gap16 {
+  gap: 16px;
+}
+.widthAuto {
+  width: auto;
+  justify-content: left;
 }

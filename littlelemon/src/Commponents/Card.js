@@ -1,4 +1,4 @@
-import Icon from "../Resources/Bike.png"
+import Icon from "../Resources/Bike.svg"
 
 export default function Card(prop){
     return(

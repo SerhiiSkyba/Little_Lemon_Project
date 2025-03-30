@@ -14,10 +14,10 @@ export default function Testimonials(){
     return(
         <section className="background column gap32">
             <h1>What customers are thinking about us</h1>
-            <section className="row">
+            <section className="row gap32">
                 <Testimonial rating={Rating5} name='Brooke Mendez' profile={Brooke} text='Little Lemon’s fresh, flavorful food and cozy vibe make every visit special. The staff is amazing, and I always leave happy. Highly recommend!'/>
-                <Testimonial rating='Rating5' name='Name' text='Review text'/>
-                <Testimonial rating='Rating4' name='Name' text='Review text'/>
+                <Testimonial rating={Rating5} name='Sanaa Mcconnell' profile={Sanaa} text='Little Lemon never disappoints! Great food, friendly service, and a welcoming atmosphere. Perfect for any occasion. My favorite spot in town!'/>
+                <Testimonial rating={Rating4} name='Ruben Oneal' profile={Ruben} text='The food is incredible, the service is top-notch, and the ambiance is perfect. I always bring friends here, and they love it too!'/>
             </section>
         </section>
     )
