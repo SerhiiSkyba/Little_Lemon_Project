@@ -4,7 +4,7 @@ export default function Header(){
         <header>
             <img src={Logo}></img>
             <nav>
-                <ul>
+                <ul className="row">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Menu</a></li>

@@ -33,7 +33,7 @@ section{
 .column {
   flex-direction: column;
 }
-header, footer, nav,nav ul{
+header, footer{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -170,4 +170,102 @@ h5{
 .widthAuto {
   width: auto;
   justify-content: left;
+}
+footer {
+  gap: 56px;
+  justify-content: center;
+  background-color: #495E57;
+  padding: 56px;
+}
+footer nav {
+  align-items: start;
+  gap: 72px;
+}
+footer nav ul {
+  width: max-content;
+}
+footer nav ul li a, footer nav ul li h4{
+  color: #EDEFEE;
+}
+nav ul h4 {
+  font-family: 'Karla';
+  font-weight: 800;
+  font-size: 1.5rem;
+  max-width: 180px;
+  line-height: 120%;
+  height: 42px;
+}
+.aboutSection {
+  gap: 82px;
+}
+.aboutSection article p, .aboutSection article h1 {
+  color: #495E57;
+}
+.profileImage {
+  width: 56px;
+  height: 56px;
+}
+.rating {
+  width: 120px;
+  height: 16px;
+}
+@media screen and (max-width: 919px){
+  .row, header, footer, .aboutSection {
+    flex-direction: column;
+  }
+  article {
+    width: auto;
+    height: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  p, h1, h2, h3, h4, h5, section, div{
+    width: auto;
+  }
+  img {
+    width: auto;
+    height: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  button, .OrderDeliveryButton{
+    width: auto;
+  }
+  .firstSection section {
+    gap: 16px;
+  }
+  .card, .cardInfo {
+    justify-content: center;
+    width: auto;
+  }
+  .cardImage {
+    width: auto;
+    padding: 0;
+  }
+  .invisible {
+    width: auto;
+    height: auto;
+    text-align: left;
+    justify-content: left;
+  }
+  .testimonialInfo {
+    width: auto;
+    padding: 16px;
+  }
+  section {
+    justify-content: center;
+  }
+  .personInfo {
+    flex-direction: row;
+    justify-content: start;
+  }
+  .profileImage {
+    padding: 0;
+  }
+  .testimonialText {
+    height: auto;
+  }
+  div {
+    align-items: left;
+  }
 }
