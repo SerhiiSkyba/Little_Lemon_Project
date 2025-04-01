@@ -6,6 +6,7 @@
 }
 
 body {
+  overflow-x: hidden;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -209,67 +210,6 @@ nav ul h4 {
   width: 120px;
   height: 16px;
 }
-@media screen and (max-width: 919px){
-  .row, header, footer, .aboutSection {
-    flex-direction: column;
-  }
-  article {
-    width: auto;
-    height: auto;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-  p, h1, h2, h3, h4, h5, section, div{
-    width: auto;
-  }
-  img {
-    width: auto;
-    height: auto;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-  button, .OrderDeliveryButton{
-    width: auto;
-  }
-  .firstSection section {
-    gap: 16px;
-  }
-  .card, .cardInfo {
-    justify-content: center;
-    width: auto;
-  }
-  .cardImage {
-    width: auto;
-    padding: 0;
-  }
-  .invisible {
-    width: auto;
-    height: auto;
-    text-align: left;
-    justify-content: left;
-  }
-  .testimonialInfo {
-    width: auto;
-    padding: 16px;
-    margin-inline: 16px;
-  }
-  section {
-    justify-content: center;
-  }
-  .personInfo {
-    flex-direction: row;
-    justify-content: start;
-  }
-  .profileImage {
-    padding: 0;
-  }
-  .testimonialText {
-    height: auto;
-  }
-  div {
-    align-items: left;
-  }
-}
 
 .textAlignCenter {
   text-align: center;
@@ -284,16 +224,20 @@ input, select{
   border: none;
   background: #EDEFEE;
   color: #000;
+  width: auto;
+}
+
+select {
   width: 100%;
 }
 
 form {
-  padding: 32px;
   background-color: #495E57;
   border-radius: 16px;
   margin: 32px 0 32px 0;
-  width: 100%;
   display: flex;
+  gap: 16px;
+  padding: 32px;
 }
 
 label {
@@ -326,3 +270,66 @@ label {
   transform: 1s;
 }
 
+@media screen and (max-width: 919px){
+  .row, header, footer, .aboutSection {
+    flex-direction: column;
+  }
+  article {
+    width: auto;
+    height: auto;
+    margin-inline: 16px;
+  }
+  p, h1, h2, h3, h4, h5, div{
+    width: auto;
+  }
+  section {
+    width: 100vw;
+  }
+  img {
+    width: auto;
+    height: auto;
+    margin-inline: 16px;
+  }
+  button, .OrderDeliveryButton{
+    width: auto;
+  }
+  .firstSection section {
+    gap: 16px;
+  }
+  .card, .cardInfo {
+    justify-content: center;
+    width: auto;
+  }
+  .cardImage {
+    width: auto;
+    padding: 0;
+  }
+  .invisible {
+    width: auto;
+    height: auto;
+    text-align: left;
+    justify-content: left;
+  }
+  .testimonialInfo {
+    width: auto;
+    padding: 16px;
+    margin-inline: 16px;
+  }
+  .personInfo {
+    flex-direction: row;
+    justify-content: start;
+  }
+  .profileImage {
+    padding: 0;
+  }
+  .testimonialText {
+    height: auto;
+  }
+  div {
+    align-items: left;
+  }
+  form {
+    width:auto;
+    margin-inline: 16px;
+  }
+}

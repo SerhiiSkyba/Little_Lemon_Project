@@ -1,14 +1,6 @@
-import { Route, Routes } from "react-router-dom";
 import Image1 from "../Resources/Image1.png"
-import Reservation from "./ReservationForm";
 import { Link } from "react-router-dom";
 export default function First(){
-    function Reserve(){
-        return(
-            <Routes><Route path="/Reservation" element={<Reservation/>}></Route></Routes>
-        );
-    }
-
     return(
         <section className="background firstSection" style={{background: "#495E57"}}>
             <section className="row">
