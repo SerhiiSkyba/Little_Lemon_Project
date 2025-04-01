@@ -3,7 +3,7 @@ import Logo from "../Resources/Logo.png"
 export default function Header(){
     return (
         <header>
-            <img src={Logo}></img>
+            <Link to="/"><img src={Logo}></img></Link>
             <nav>
                 <ul className="row">
                     <li><Link to="/"><a>Home</a></Link></li>
