@@ -1,18 +1,16 @@
 import { useState } from "react"
 
-export default function ReservationForm(){
+export default function ReservationForm(prop){
     const [date, setDate] = useState({
         value: "",
         isTouched: false
     })
 
-    const [time, setTime] = useState({
-        value: "17:00",
-    })
+    const [time, setTime] = useState("")
 
     const [numberOfGuests, setNumberOfGuests] = useState(1)
 
-    const [occasion, setOccasion] = useState("None")
+    const [occasion, setOccasion] = useState(["None","Anniversary","Birthday"])
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -35,6 +33,14 @@ export default function ReservationForm(){
         );
     }
 
+    const AddTimes = (prop) =>{
+        for (let i = 0; i>time.length-1; i++){
+            return(
+                <option value={time[prop.i]} />
+            )
+        }
+    }
+
     return(
     <form onSubmit={handleSubmit} className="column">
         <h3>Reserve a Table</h3>
@@ -43,18 +49,10 @@ export default function ReservationForm(){
         {date.isTouched && date.value === '' ? <ErrorMessage message="Please, choose a date"/> : null}
         <label for="res-time">Choose time <span className="required">*</span></label>
         <div className="customSelect">
-            <select id="res-time" onChange={(e) => setTime({...time, value: e.target.value})} onBlur={(e) => setTime({...time, isTouched: e.target.value})} placeholder="Select time of reservation">
-                <option>17:00</option>
-                <hr />
-                <option>18:00</option>
-                <hr />
-                <option>19:00</option>
-                <hr />
-                <option>20:00</option>
-                <hr />
-                <option>21:00</option>
-                <hr />
-                <option>22:00</option>
+            <select id="res-time" onChange={(e) => prop.setTime({e})} placeholder="Select time of reservation" value={time}>
+                {prop.time.map((time, index) => (
+                    <option key={index} value={time}>{time}</option>
+                ))}
             </select>
         </div>
         {time.value === '' ? <ErrorMessage message="Please, choose a time"/> : null}
@@ -63,12 +61,10 @@ export default function ReservationForm(){
         {numberOfGuests === 0 || numberOfGuests < 0 || numberOfGuests > 10 ? <ErrorMessage message="Please, write a number of guests from 1 to 10"/> : null}
         <label for="occasion">Occasion</label>
         <div className="customSelect">
-            <select id="occasion" onChange={(e) => setOccasion({...occasion, value: e.target.value})}>
-                <option>None</option>
-                <hr />
-                <option>Birthday</option>
-                <hr />
-                <option>Anniversary</option>
+            <select id="occasion" onChange={(e) => setOccasion({e})}>
+                {occasion.map((occasion, index) => (
+                        <option key={index} value={occasion}>{occasion}</option>
+                ))}
             </select>
         </div>
        
