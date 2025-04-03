@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
-import Header from './Commponents/Header.js';
-import Main from './Commponents/Main.js';
-import Footer from './Commponents/Footer.js';
-import ReservationSection from './Commponents/ReservationSection.js';
-import Login from './Commponents/Login.js';
+import Header from './Components/Header.js';
+import Main from './Components/Main.js';
+import Footer from './Components/Footer.js';
+import ReservationSection from './Components/ReservationSection.js';
+import Login from './Components/Login.js';
 
 function App() {
   return (

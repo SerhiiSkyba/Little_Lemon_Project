@@ -5,15 +5,13 @@ export default function ReservationForm(prop){
     const [selectedTime, setSelectedTime] = useState(prop.state.value[0])
 
     let today = new Date()
-    const formatedToday = today.toLocaleDateString("en-GB", {
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric",
-    })
+    
+    let month = today.getMonth()
+    let day = today.getDate()
+    if (month < 10) {month = "0" + (month + 1)}
+    if (day < 10) {day = "0" + day}
 
-    const [date, setDate] = useState(today.getFullYear() + '-' + today.getMonth() + '-' + today.getDate())
-
-    console.log(formatedToday)
+    const [date, setDate] = useState(today.getFullYear() + '-' + month + '-' + day)
 
     const [numberOfGuests, setNumberOfGuests] = useState(1)
 
@@ -28,7 +26,7 @@ export default function ReservationForm(prop){
 
     const ErrorMessage = (prop) => {
         return (
-            <p style={{color: '#F4CE14'}}>{prop.message}</p>
+            <p style={{color: '#F4CE14', width: 'max-content'}}>{prop.message}</p>
         )
     }
 
@@ -55,7 +53,7 @@ export default function ReservationForm(prop){
             </select>
         </div>
         <label for="guests">Number of guests <span className="required">*</span></label>
-        <input type="number" placeholder="Write a number of guests" min="1" max="10" id="guests" onChange={(e) => setNumberOfGuests(e.target.value)}/>
+        <input type="number" placeholder="Write a number of guests" min="1" max="10" id="guests" onChange={(e) => setNumberOfGuests(e.target.value)} value={numberOfGuests}/>
         {numberOfGuests == 0 || numberOfGuests < 0 || numberOfGuests > 10 ? <ErrorMessage message="Please, write a number of guests from 1 to 10"/> : null}
         <label for="occasion">Occasion</label>
         <div className="customSelect">

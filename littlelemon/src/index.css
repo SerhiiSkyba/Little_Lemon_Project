@@ -270,6 +270,13 @@ label {
   transform: 1s;
 }
 
+.ReservationImage {
+  width: 100%;
+  margin: 32px 0 32px 0;
+  background-clip: border-box;
+  border-radius: 16px;
+}
+
 @media screen and (max-width: 919px){
   .row, header, footer, .aboutSection {
     flex-direction: column;
