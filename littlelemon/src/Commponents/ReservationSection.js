@@ -1,32 +1,22 @@
 import ReservationForm from "./ReservationForm"
 import { useReducer, useState } from "react"
-function updateTimes(){
-    return (["17:00","18:00","19:00","20:00","21:00"])
-}
-function initializeTimes(){
-
-}
-
-const availableTimes = (state, action) =>{
-    switch(action){
+const updateTimes = () => {return(["17:00","18:00","19:00","20:00","21:00"])} 
+const initializeTimes = () => {return(["1:00","2:00","3:00"])}
+    
+const timeAction = (state, action) =>{
+    switch(action.type){
         case "update":
-            state = updateTimes();
-            return(state)
-        case "initialize":
-            state = initializeTimes();
-            return(state)
+            return {value: updateTimes()}
     }
 }
 
 export default function ReservationSection(){
-    
-    
+    const [state, dispatch] = useReducer(timeAction, {value: initializeTimes()})
+
     return(
-        
-        
         <main>
             <section className="row">
-                <ReservationForm time={time}/>
+                <ReservationForm state={state} dispatch={dispatch}/>
                 <img />
             </section>
         </main>
