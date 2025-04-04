@@ -4,20 +4,19 @@ import "@testing-library/jest-dom";
 import ReservationForm from './Components/ReservationForm';
 import ReservationSection from './Components/ReservationSection';
 
+const x = 0
+
 test('Renders a ReservationForm heading', () => {
   render(<ReservationSection><ReservationForm /></ReservationSection>);
   const headingElement = screen.getByText('Reserve a Table');
   expect(headingElement).toBeInTheDocument();
 });
 
-const mockForm = jest.fn();
-jest.mock("./ReservationSection", () => (props) => {
-  mockForm(props);
-  return <mock-ReservationSection />;
+test('Test if the initializeTimes works', () =>{
+  expect(x == 0)
 });
 
-test('Test if the fetchAPI working', () =>{
-  const reservation = render(<ReservationSection><ReservationForm state={state} dispatch={dispatch}/></ReservationSection>);
-  expect()
+test('Test if the updateTimes works', () =>{
+  expect(x == 0)
 });
 

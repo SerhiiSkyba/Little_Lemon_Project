@@ -3,16 +3,16 @@ import LogoMonochrome from "../Resources/Little Lemon Logo Monochrome.png"
 export default function Footer(){
     return(
         <footer>
-            <img src={LogoMonochrome} alt="Little Lemon Logo"/>
+            <Link to="/"><img src={LogoMonochrome} alt="Little Lemon Logo"/></Link>
             <nav className="row ">
                 <ul className="column">
                     <li><h4>Doormat Navigation</h4></li>
-                    <li><a href="#">Home</a></li>
+                    <Link to="/"><img src={Logo} alt="Logo Little Lemon"></img></Link>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Menu</a></li>
                     <li><a href="#">Reservations</a></li>
                     <li><a href="#">Order Online</a></li>
-                    <li><a href="#">Login</a></li>
+                    <li><Link to="/Login"><a>Login</a></Link></li>
                 </ul>
                 <ul className="column">
                     <li><h4>Contact</h4></li>
