@@ -6,10 +6,10 @@ export default function Header(){
             <Link to="/"><img src={Logo} alt="Logo Little Lemon"></img></Link>
             <nav>
                 <ul className="row">
-                <Link to="/"><img src={Logo} alt="Logo Little Lemon"></img></Link>
+                    <li><Link to="/"><a>Home</a></Link></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Menu</a></li>
-                    <li><a href="#">Reservations</a></li>
+                    <Link to="/Reservation"><li><a href="#">Reservations</a></li></Link>
                     <li><a href="#">Order Online</a></li>
                     <li><Link to="/Login"><a>Login</a></Link></li>
                 </ul>

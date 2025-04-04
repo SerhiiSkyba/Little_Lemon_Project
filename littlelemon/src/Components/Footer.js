@@ -1,4 +1,5 @@
 import LogoMonochrome from "../Resources/Little Lemon Logo Monochrome.png"
+import { Link } from "react-router-dom"
 
 export default function Footer(){
     return(
@@ -7,10 +8,10 @@ export default function Footer(){
             <nav className="row ">
                 <ul className="column">
                     <li><h4>Doormat Navigation</h4></li>
-                    <Link to="/"><img src={Logo} alt="Logo Little Lemon"></img></Link>
+                    <li><Link to="/"><a>Home</a></Link></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Menu</a></li>
-                    <li><a href="#">Reservations</a></li>
+                    <Link to="/Reservation"><li><a href="#">Reservations</a></li></Link>
                     <li><a href="#">Order Online</a></li>
                     <li><Link to="/Login"><a>Login</a></Link></li>
                 </ul>
