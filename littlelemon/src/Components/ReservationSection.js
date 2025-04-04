@@ -1,32 +1,29 @@
 import ReservationForm from "./ReservationForm"
-import { useEffect, useReducer, useState } from "react"
+import { useReducer, useState } from "react"
 import Food from "../Resources/Food2.png"
+import { fetchAPI } from "../APIs/api"
 
+let initializeDate = new Date()
 
-const updateTimes = () => {return(["17:00","18:00","19:00","20:00","21:00"])} 
-const initializeTimes = () => {return(["0:00","1:00"])}
+const updateTimes = (date) => {return fetchAPI(date)} 
+const initializeTimes = (date) => {return fetchAPI(date)}
     
 const timeAction = (state, action) =>{
     switch(action.type){
         case "update":
-            return {value: updateTimes()}
+            console.log(action.date)
+            return {value: updateTimes(action.date)}
     }
 }
 
+
 export default function ReservationSection(){
 
-    const [state, dispatch] = useReducer(timeAction, {value: initializeTimes()})
+    const [date, setDate] = useState()
 
-    const [data, setData] = useState()
+    const [state, dispatch] = useReducer(timeAction, {value: initializeTimes(initializeDate)})
 
-    fetch('https://raw.githubusercontent.com/courseraap/capstone/main/api.js')
-    .then(response => response.text())
-    .then(script => {
-        setData(script); // Executes the JavaScript file
-    })
-    .catch(error => console.error('Error fetching script:', error));
-
-    console.log(data)
+    console.log(state)
     return(
         <main>
             <section className="background">

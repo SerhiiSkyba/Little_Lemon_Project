@@ -1,4 +1,5 @@
 import { useReducer, useState } from "react"
+import { submitAPI } from "../APIs/api"
 
 export default function ReservationForm(prop){
 
@@ -9,7 +10,7 @@ export default function ReservationForm(prop){
     let month = today.getMonth()
     let day = today.getDate()
     if (month < 10) {month = "0" + (month + 1)}
-    if (day < 10) {day = "0" + day}
+    if (day < 10) {day = "0" + (day + 1)}
 
     const [date, setDate] = useState(today.getFullYear() + '-' + month + '-' + day)
 
@@ -26,13 +27,14 @@ export default function ReservationForm(prop){
 
     const ErrorMessage = (prop) => {
         return (
-            <p style={{color: '#F4CE14', width: 'max-content'}}>{prop.message}</p>
+            <p className="error">{prop.message}</p>
         )
     }
 
     const ValidForm = () =>{
         return(
-            date.value !== '' &&
+            date !== '' &&
+            new Date(date).getTime() >= new Date().getTime() &&
             numberOfGuests > 0 &&
             numberOfGuests < 10
         );
@@ -42,8 +44,9 @@ export default function ReservationForm(prop){
     <form onSubmit={handleSubmit} className="column">
         <h3>Reserve a Table</h3>
         <label for="res-date">Choose date <span className="required">*</span></label>
-        <input type="date" id="res-date" onChange={(e) => {setDate(e.target.value); prop.dispatch({ type: "update" })}} value={date}/>
-        {date.value == '' ? <ErrorMessage message="Please, choose a date"/> : null}
+        <input type="date" id="res-date" onChange={(e) => {setDate(e.target.value); prop.dispatch({ type: "update", date: new Date(e.target.value)})}} value={date}/>
+        {date == '' ? <ErrorMessage message="Please, choose a date"/> : null}
+        {new Date(date).getTime() <= new Date().getTime() ? <ErrorMessage message="Date should to be at least one day tomorrow from todays date"/> : null}
         <label for="res-time">Choose time <span className="required">*</span></label>
         <div className="customSelect">
             <select id="res-time" onChange={(e) => setSelectedTime(e.target.value)} placeholder="Select time of reservation" value={selectedTime}>
@@ -64,7 +67,7 @@ export default function ReservationForm(prop){
             </select>
         </div>
        
-        <input type="submit" className="SubmitButton" value="Make Your reservation" disabled={!ValidForm()}/>
+        <input type="submit" className="SubmitButton" onClick={console.log(submitAPI())} value="Make Your reservation" disabled={!ValidForm()}/>
     </form>
     )
 }

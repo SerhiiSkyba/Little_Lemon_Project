@@ -277,6 +277,11 @@ label {
   border-radius: 16px;
 }
 
+.error {
+  color: #F4CE14;
+  width: auto;
+}
+
 @media screen and (max-width: 919px){
   .row, header, footer, .aboutSection {
     flex-direction: column;
@@ -338,5 +343,9 @@ label {
   form {
     width:auto;
     margin-inline: 16px;
+  }
+  .ReservationImage {
+    width: 0;
+    height: 0;
   }
 }
